@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('table_no');
             $table->integer('no_of_dishes');            
             $table->double('grand_total');   
-            $table->date('order_date');                       
+            $table->date('order_date')->default(date("Y/m/d"));                       
             $table->timestamps();
 
             $table->foreign('waiter_id')->references('id')->on('users');
