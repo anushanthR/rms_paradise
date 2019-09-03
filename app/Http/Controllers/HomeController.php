@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home', );
+        $dishes = Dish::all();
+        
+        return view('home')->with('dishes', $dishes);
     }
 }

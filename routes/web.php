@@ -17,6 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'DishesController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/submit', 'DishesController@store');
+Route::post('/submit', 'OrderController@store');
+
+Route::get('/sales', 'OrderController@getDailySale');
+
+Route::get('/success', 'OrderController@success');
+
